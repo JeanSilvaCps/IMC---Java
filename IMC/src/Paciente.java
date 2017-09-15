@@ -4,12 +4,12 @@ public class Paciente {
 	private Double peso, altura, imc;
 	
 	public Paciente( Double peso, Double altura ) {
-		this.peso = peso;
-		this.altura = altura;
+		this.setPeso(peso);
+		this.setAltura(altura);
 	}
 	
 	private Double calcularIMC() {
-		imc = this.peso / ( this.altura * this.altura );
+		imc = this.getPeso() / ( this.getAltura() * this.getAltura() );
 		return imc;
 	}
 	
@@ -52,6 +52,22 @@ public class Paciente {
 			return "Não é possivel calcular o IMC";
 		}
 		
+	}
+
+	private Double getAltura() {
+		return altura;
+	}
+
+	private void setAltura(Double altura) {
+		this.altura = altura;
+	}
+
+	private Double getPeso() {
+		return peso;
+	}
+
+	private void setPeso(Double peso) {
+		this.peso = peso;
 	}
 }
 
